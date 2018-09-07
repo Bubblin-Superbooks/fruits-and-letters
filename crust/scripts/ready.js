@@ -1,15 +1,13 @@
-(function (r) {
-  'use strong'
++!~-(function(r) {
+    'use strong';
+    
+    const fs = r('fs');
+    const chalk = r('chalk');
 
-  const fse = r('fs-extra')
-  const chalk = r('chalk')
+    fs.readFile('./license.txt', 'utf8', (err, content) => {
+        console.log(chalk.magenta(content));
+    });
+    
+    console.log(chalk.blue('Project is ready.'));
 
-  fse.readFile('./license.txt', 'utf8', (err, data) => {
-    if (err) {
-      return new Error('Couldn\'t read license information.')
-    }
-    console.log(chalk.magenta(data))
-  })
-
-  console.log(chalk.blue('Project is ready.'))
-})(require)
+})(require);
